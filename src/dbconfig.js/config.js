@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
-let db = mongoose.connect("mongodb://127.0.0.1:27017/employees")
+
+export function dbConnection(url){
+
+let db = mongoose.connect(url)
 .then(console.log("Mongodb connection eastablished"))
 .catch((error)=>console.log("error in establishing the connection",error))
 
-export default db
+}
+
 
